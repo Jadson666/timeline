@@ -6,10 +6,14 @@ class TimePoint extends React.Component {
   render() {
     let windowStyle = {
       width: this.widthValue,
-      border: '3px gray solid',
+      border: '2px #ca55559e solid',
+      color: '#f10303d9',
+      backgroundColor: '#ffc0cbb0',
       position: 'absolute',
       left: 25,
-      top: -10
+      top: -10,
+      textAlign:'center',
+      borderRadius: 5
     }
     let smallWindowStyle = {
       backgroundColor: 'gray',

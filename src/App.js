@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import './App.css'
+import './heart.css'
 import TimePoint from './components/TimePoint'
 import OneTimeLine from './components/OneTimeLine'
+import LoveLala from './components/LoveLala';
 
 const Y = () => (
   <div style={{ height: 1000 }}>
-    <section style={{ backgroundColor: 'white', borderWidth: 0 }} />
+    <section style={{ backgroundColor: '#f1f1f1', borderWidth: 0 }} />
     <section>高一</section>
     <section>高二</section>
     <section>高三</section>
@@ -71,9 +73,8 @@ class App extends Component {
               <TimePoint windowPosition="left" timePosition={680}>
                 楊婷
               </TimePoint>
-              <TimePoint windowPosition="right" timePosition={750}>
-                拉拉
-              </TimePoint>
+              <LoveLala position={780}/>
+              
             </OneTimeLine>
             <OneTimeLine name="旻">
               <TimePoint windowPosition="right" timePosition={150}>
