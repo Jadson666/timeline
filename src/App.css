@@ -46,6 +46,10 @@
 .timeTags>div>section {
   height: 100px;
   width: 100px;
+  box-sizing: border-box;
+  border: 10px rgb(197, 179, 18) solid;
+  background-color: rgb(172, 142, 9);
+  color: rgb(243, 244, 245);
   min-width: 60px;
   text-align: center;
   display: flex;
@@ -75,6 +79,8 @@
 .timeline>header {
   height: 100px;
   width: 100%;
+  box-sizing: border-box;
+  border: 10px solid white;
   min-width: 280px;
   display: flex;
   align-items: center;
