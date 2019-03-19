@@ -103,7 +103,7 @@ body {
   box-sizing: border-box;
   border: 10px solid #d0c8d8;
   border-radius: 20px;
-  min-width: 280px;
+  min-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;

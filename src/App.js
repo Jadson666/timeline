@@ -115,15 +115,15 @@ const caculateHowManyY = (width) => {
 function getTiltleRepeatNumber(width) {
   let times = 0
   /* repeat Y axis title according to screen width */
-  if (width >= 2060) {
+  if (width >= 1920) {
     times = 2
-  } else if (width >= 1500) {
+  } else if (width >= 1400) {
     times = 3
-  } else if (width >= 1220) {
+  } else if (width >= 1140) {
     times = 4
-  } else if (width >= 940) {
+  } else if (width >= 880) {
     times = 5
-  } else if (width >= 660) {
+  } else if (width >= 620) {
     times = 7
   } else {
     times = 14
