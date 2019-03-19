@@ -1,5 +1,5 @@
 body {
-  background-color: #f1f1f1;
+  background-color: #d0c8d8;
   font-family: "微軟正黑體" , "xingothic-tc-w6","jf-jinxuan-ultralight", sans-serif, apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 }
 
@@ -30,6 +30,14 @@ body {
   font-size: 1.6em;
 }
 
+.day-count{
+  text-align: right;
+}
+
+.day-count > span{
+  font-size: 2em;
+}
+
 .month {
   text-transform: uppercase;
   font-weight: 300;
@@ -52,9 +60,9 @@ body {
   height: 100px;
   width: 100px;
   box-sizing: border-box;
-  border: 10px rgb(197, 179, 18) solid;
-  background-color: rgb(172, 142, 9);
-  color: rgb(243, 244, 245);
+  border: 10px rgb(235, 195, 243) solid;
+  background-color: rgb(227, 192, 238);
+  color: #6573c1;
   min-width: 60px;
   text-align: center;
   display: flex;
@@ -86,7 +94,7 @@ body {
   width: 100%;
   font-size: 2em;
   box-sizing: border-box;
-  border: 10px solid #f1f1f1;
+  border: 10px solid #d0c8d8;
   border-radius: 20px;
   min-width: 280px;
   display: flex;

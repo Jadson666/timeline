@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
 import './App.css'
 import './heart.css'
-import TimePoint from './components/TimePoint'
-import OneTimeLine from './components/OneTimeLine'
-import LoveLala from './components/LoveLala';
+import Jason from './person/Jason'
+import YuMing from './person/YuMing'
+import Neil from './person/Neil'
+import Su from './person/Su'
+import CC from './person/CC'
+import Zoe from './person/Zoe'
+import Emily from './person/Emily'
+import Wendy from './person/Wendy'
+import Sun from './person/Sun'
+import Nickie from './person/Nickie'
+import BigDickUncle from './person/BigDickUncle'
+import DoraYin from './person/DoraYin'
+import ChunWei from './person/ChunWei'
+import ChianHuei from './person/ChianHuei'
+import { getToday, getCountDay } from './Utils'
 
+/* all the time frame */
 const Y = () => (
   <div style={{ height: 1000 }}>
-    <section style={{ backgroundColor: '#f1f1f1', borderWidth: 0 }} />
+    <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }} />
     <section>高一</section>
     <section>高二</section>
     <section>高三</section>
@@ -40,225 +53,42 @@ class App extends Component {
     this.setState({ width: document.body.scrollWidth })
   }
   render() {
+    const today = getToday()
+    const daysCount = getCountDay()
+    window.console.log(daysCount)
     return (
       <main className="app">
         <div className="header">
           <div className="color-overlay">
-            <div className="day-number">17</div>
+            <div className="day-number">{today.day}</div>
             <div className="date-right">
               <div className="day-name">肥牡蠣</div>
-              <div className="month">March 2019</div>
+              <div className="month">
+                {today.month} {today.year}
+              </div>
+            </div>
+            <div className="day-count">
+              <span>{daysCount}</span> days past since the day
             </div>
           </div>
         </div>
         <div className="timelines">
           <div className="timeTags">{caculateHowManyY(this.state.width)}</div>
           <div className="timelineBlocks">
-            <OneTimeLine name="暘">
-              <TimePoint windowPosition="right" timePosition={50} type='deadPast'>
-                KIKI
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={150} type='deadPast'>
-                學姊
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={330} type='deadPast'>
-                段薇
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={540} type='deadPast'>
-                原妹
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={630} type='deadPast'>
-                KI再來
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={680} type='deadPast'>
-                楊婷
-              </TimePoint>
-              <LoveLala position={780}/>
-            </OneTimeLine>
-            <OneTimeLine name="旻">
-              <TimePoint windowPosition="right" timePosition={150} type='lover'>
-                大蒟蒻
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={370} type='lover'>
-                林
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={420} type='lover'>
-                陽明學姊
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={530}>
-                實踐傳媒
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={650}>
-                德國
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={720} type='lover'>
-                大叔
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={770} type='lover'>
-                四川香腸
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="柯" />
-            <OneTimeLine name="蘇">
-              <TimePoint windowPosition="right" timePosition={0} type='lover'>
-                MIKE
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={50} type='lover'>
-                黃河
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={100} type='lover'>
-                楊正旭
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={200} type='lover'>
-                楊立全
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={500}>
-                EN
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={550} type='lover'>
-                XieXie
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={640} type='lover'>
-                西班牙香腸
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="C">
-              <TimePoint windowPosition="right" timePosition={250} type='lover'>
-                Eric
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={500} type='lover'>
-                挪威阿腸
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={550} type='lover'>
-                拉亞
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={750}>
-                中醫
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="玄">
-              <TimePoint windowPosition="right" timePosition={0} type='lover'>
-                前男友
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={110} type='lover'>
-                卓彥
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={620}>
-                Cathay
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="慈">
-              <TimePoint windowPosition="right" timePosition={0} type='lover'>
-                張銘佑
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={320} type='lover'>
-                賴
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={550}>
-                NY
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={650} type='lover'>
-                套
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={760}>
-                上海
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="孫">
-              <TimePoint windowPosition="right" timePosition={50} type='lover'>
-                LALA
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={550}>
-                早秋
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={680}>
-                日本
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={780} type='lover'>
-                Mr.白羊
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="郭">
-              <TimePoint windowPosition="right" timePosition={170} type='lover'>
-                張潮
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={520}>
-                日愣
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={625}>
-                法國
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={640} type='lover'>
-                哥斯大香腸
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={780} type='lover'>
-                天使
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={820} type='lover'>
-                朱國
-              </TimePoint>
-            </OneTimeLine> 
-            <OneTimeLine name="食">
-            <TimePoint windowPosition="right" timePosition={50} type='lover'>
-                ㄊ月（誰啦！）
-            </TimePoint>
-            <TimePoint windowPosition="left" timePosition={230} type='lover'>
-                古麥
-              </TimePoint> 
-            </OneTimeLine>
-            <OneTimeLine name="叔">
-            <TimePoint windowPosition="right" timePosition={100}>
-                爸爸
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={150} type='lover'>
-                Bamboo
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={230} type='lover'>
-                黃奕安
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={550}>
-                阿妹公司
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={600} type='lover'>
-                何品璇
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="尹">
-            <TimePoint windowPosition="right" timePosition={100}>
-                媽媽
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={120} type='lover'>
-                曾耀勳
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={140}>
-                北車頂樓
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={480} type='lover'>
-                鄭喬浦
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={520}>
-                研究所
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={550}>
-                叔家後巷
-              </TimePoint>
-              <TimePoint windowPosition="right" timePosition={660} type='lover'>
-                阿強
-              </TimePoint>
-              <TimePoint windowPosition="left" timePosition={700}>
-                中秋買房
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="仲">
-            <TimePoint windowPosition="right" timePosition={650} type='lover'>
-                翁Fish
-              </TimePoint>
-            </OneTimeLine>
-            <OneTimeLine name="輝">
-            <TimePoint windowPosition="right" timePosition={50} type='lover'>
-                泡泡
-              </TimePoint>
-            </OneTimeLine>
+            <Jason />
+            <YuMing />
+            <Neil />
+            <Su />
+            <CC />
+            <Zoe />
+            <Emily />
+            <Sun />
+            <Wendy />
+            <Nickie />
+            <BigDickUncle />
+            <DoraYin />
+            <ChunWei />
+            <ChianHuei />
           </div>
         </div>
       </main>
@@ -275,7 +105,6 @@ const caculateHowManyY = (width) => {
   return YaxisArray
 }
 
-export default App
 function getTiltleRepeatNumber(width) {
   let times = 0
   /* repeat Y axis title according to screen width */
@@ -294,3 +123,5 @@ function getTiltleRepeatNumber(width) {
   }
   return times
 }
+
+export default App
