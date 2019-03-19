@@ -33,22 +33,20 @@ class TimePoint extends React.Component {
     }
     switch (this.props.type) {
       case 'lover':
-        windowStyle = {
-          ...windowStyle,
-          borderColor: '#ca55559e',
-          color: '#f10303d9',
-          backgroundColor: '#ffc0cbb0'
-        }
+        windowStyle = Object.assign(windowStyle, {
+          borderColor: 'rgba(202,85,85,0.619)',
+          color: 'rgba(241,3,3,0.85)',
+          backgroundColor: 'rgba(255,192,203,0.69)'
+        })
         pointColor = { borderColor: '#F93B69' }
         break
       case 'deadPast':
-        windowStyle = {
-          ...windowStyle,
-          borderColor: '#ca55559e',
-          color: '#f10303d9',
-          backgroundColor: '#ffc0cbb0',
+        windowStyle = Object.assign(windowStyle, {
+          borderColor: 'rgba(202,85,85,0.619)',
+          color: 'rgba(241,3,3,0.85)',
+          backgroundColor: 'rgba(255,192,203,0.69)',
           textDecoration: 'line-through'
-        }
+        })
         pointColor = { borderColor: '#F93B69' }
         break
       default:
@@ -75,7 +73,7 @@ class TimePoint extends React.Component {
     return (
       <div
         className="timePoint"
-        style={{ top: this.props.timePosition, ...pointColor }}
+        style={{ top: this.props.timePosition, borderColor: pointColor.borderColor }}
       >
         <div style={windowStyle}>{this.props.children}</div>
         <div style={smallWindowStyle} />

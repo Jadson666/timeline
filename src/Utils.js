@@ -22,11 +22,6 @@ export const getToday = () => {
   if (dd < 10) {
     dd = '0' + dd
   }
-  window.console.log({
-    day: dd,
-    month: monthMappingArray[mm],
-    year: yyyy
-  })
   return {
     day: dd,
     month: monthMappingArray[mm],
@@ -42,6 +37,5 @@ export const getCountDay = () => {
   let diffDays = Math.round(
     Math.abs((firstDate.getTime() - secondDate.getTime()) / oneDay)
   )
-  window.console.log(diffDays)
   return diffDays
 }

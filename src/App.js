@@ -19,7 +19,6 @@ import { getToday, getCountDay } from './Utils'
 
 /* all the time frame */
 const Y = (props) => {
-  window.console.log(props)
   return (
     <div style={{ height: 1000 }}>
       <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }}>
@@ -62,7 +61,6 @@ class App extends Component {
   render() {
     const today = getToday()
     const daysCount = getCountDay()
-    window.console.log(daysCount)
     return (
       <main className="app">
         <div className="header">

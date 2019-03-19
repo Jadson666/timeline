@@ -10,13 +10,13 @@ export default class DoraYin extends Component {
                 媽媽
               </TimePoint>
               <TimePoint windowPosition="left" timePosition={120} timeEndPosition={420} type="lover">
-                曾耀勳
+                蒸藥
               </TimePoint>
               <TimePoint windowPosition="right" timePosition={140}>
                 北車頂樓
               </TimePoint>
               <TimePoint windowPosition="left" timePosition={480} timeEndPosition={600} type="lover">
-                鄭喬浦
+                正港
               </TimePoint>
               <TimePoint windowPosition="right" timePosition={520}>
                 研究所
@@ -30,7 +30,7 @@ export default class DoraYin extends Component {
                 type="lover"
                 timeEndPosition={900}
               >
-                阿強
+                強壯的人
               </TimePoint>
               <TimePoint windowPosition="left" timePosition={700}>
                 中秋買房
