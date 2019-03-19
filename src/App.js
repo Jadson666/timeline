@@ -18,20 +18,27 @@ import ChianHuei from './person/ChianHuei'
 import { getToday, getCountDay } from './Utils'
 
 /* all the time frame */
-const Y = () => (
-  <div style={{ height: 1000 }}>
-    <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }} ></section>
-    <section>高一</section>
-    <section>高二</section>
-    <section>高三</section>
-    <section>大一二</section>
-    <section>大三四</section>
-    <section>22-24歲</section>
-    <section>24-26歲</section>
-    <section>26-28歲</section>
-    <section />
-  </div>
-)
+const Y = (props) => {
+  window.console.log(props)
+  return (
+    <div style={{ height: 1000 }}>
+      <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }}>
+        <a id={props.id} href={'#' + (props.id + 1)}>
+          <span className="arrow-to-next" />
+        </a>
+      </section>
+      <section>高一</section>
+      <section>高二</section>
+      <section>高三</section>
+      <section>大一二</section>
+      <section>大三四</section>
+      <section>22-24歲</section>
+      <section>24-26歲</section>
+      <section>26-28歲</section>
+      <section />
+    </div>
+  )
+}
 
 class App extends Component {
   constructor(props) {
@@ -100,7 +107,7 @@ const caculateHowManyY = (width) => {
   let YaxisArray = []
   let times = getTiltleRepeatNumber(width)
   for (let i = 0; i < times; i++) {
-    YaxisArray[i] = <Y key={i} />
+    YaxisArray[i] = <Y key={i} id={i} />
   }
   return YaxisArray
 }
