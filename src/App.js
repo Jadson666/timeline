@@ -20,7 +20,7 @@ import { getToday, getCountDay } from './Utils'
 /* all the time frame */
 const Y = () => (
   <div style={{ height: 1000 }}>
-    <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }} />
+    <section style={{ backgroundColor: '#d0c8d8', borderWidth: 0 }} ></section>
     <section>高一</section>
     <section>高二</section>
     <section>高三</section>

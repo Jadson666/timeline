@@ -18,7 +18,7 @@ export default class Jason extends Component {
         <TimePoint
           windowPosition="left"
           timePosition={150}
-          timeEndPosition={280}
+          timeEndPosition={315}
           type="deadPast"
         >
           學姊

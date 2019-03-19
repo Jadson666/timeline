@@ -127,3 +127,26 @@
   -o-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
+
+
+.cut-diamond {
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.712) transparent;
+  border-width: 0 10px 10px 10px;
+  height: 0;
+  width: 20px;
+  box-sizing: content-box;
+  position: absolute;
+  margin: 20px 0 50px 0;
+}
+.cut-diamond:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.712) transparent transparent transparent;
+  border-width: 28px 20px 0 20px;
+}
