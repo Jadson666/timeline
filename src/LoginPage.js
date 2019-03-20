@@ -15,6 +15,20 @@ const Center = styled.div`
   align-self: center;
 `
 
+const Alert = styled.div`
+  font-size: 5em;
+  color: #e06f60;
+  @media (max-width: 895px) {
+    font-size: 3em;
+  }
+  @media (max-width: 555px) {
+    font-size: 2em;
+  }
+  @media (max-width: 375px) {
+    font-size: 1.5em;
+  }
+`
+
 const userList = [
   '林子暘',
   'Nancy Liang',
@@ -29,7 +43,8 @@ const userList = [
   '林建輝',
   'Agnes Yu Hsin Su',
   'Emily Hsing-Tzu Chang',
-  'Nickie Yue'
+  'Nickie Yue',
+  'Huei-Hsin Chung',
 ]
 
 export default class LoginPage extends Component {
@@ -38,39 +53,54 @@ export default class LoginPage extends Component {
     this.state = {
       isLoggin: false,
       clicked: false,
-      spinner: false
+      spinner: false,
+      inGroup: undefined
     }
   }
 
   responseFacebook = (response) => {
-    if (response.name && userList.includes(response.name)) {
-      this.setState({ isLoggin: true })
+    if (response.name && this.state.clicked) {
+      console.log(response)
+      if (userList.includes(response.name)) {
+        this.setState({ isLoggin: true , inGroup: true})
+      } else {
+        this.setState({ inGroup: false, spinner: false })
+      }
     }
   }
 
   componentClicked = () => {
     this.setState({ clicked: true, spinner: true })
     console.log(this.state)
-    setTimeout(() => this.setState({ spinner: false }), 1400)
   }
 
   render() {
     const login = this.props.login
 
-    if (this.state.isLoggin && this.state.clicked && !this.state.spinner) {
+    if (this.state.isLoggin === true && this.state.clicked === true) {
+      console.log(this.state)
       login()
     }
+
+    const centerElement = this.state.inGroup !== false ? (
+      <FacebookLogin
+        appId="2334215200169291"
+        autoLoad={true}
+        fields="name,email,picture"
+        onClick={this.componentClicked}
+        callback={this.responseFacebook}
+        disableMobileRedirect={true}
+        language='zh-tw'
+      />
+    ) : (
+      <Alert>Sorry, this is not for you</Alert>
+    )
     return (
       <Hello style={{ position: 'relative' }}>
         <Center>
-          <FacebookLogin
-            appId="2334215200169291"
-            autoLoad={true}
-            fields="name,email,picture"
-            onClick={this.componentClicked}
-            callback={this.responseFacebook}
-          />
+          {centerElement}
         </Center>
+        <Center />
         <Spinner show={this.state.spinner} />
       </Hello>
     )
